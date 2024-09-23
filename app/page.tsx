@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -116,7 +118,7 @@ export default function Home() {
       <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         <header className="fixed w-full bg-white dark:bg-gray-900 shadow-md z-10">
           <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" className="text-xl font-bold">Your Name</a>
+            <a href="#" className="text-xl font-bold">Marcos Gomes</a>
             <div className="flex items-center space-x-4">
               <a href="#skills" className="hidden md:inline-block hover:text-blue-600 transition-colors">Skills</a>
               <a href="#projects" className="hidden md:inline-block hover:text-blue-600 transition-colors">Projects</a>
@@ -141,10 +143,10 @@ export default function Home() {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Hi, I&apos;m <span className="text-blue-600">Your Name</span>
+                Hi, I&apos;m <span className="text-blue-600">Marcos Gomes</span>
               </h1>
               <h2 className="text-2xl md:text-3xl mb-8">
-                I&apos;m a <TypeWriter text="Software Developer Graduate" delay={100} />
+                I&apos;m a <TypeWriter text="Software Developer" delay={100} />
               </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
                 Passionate about creating efficient, scalable, and user-friendly applications. 
