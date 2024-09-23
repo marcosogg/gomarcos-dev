@@ -34,3 +34,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+/* eslint-disable @typescript-eslint/no-empty-interface */
+interface EmptyInterface {}
+/* eslint-enable @typescript-eslint/no-empty-interface */
