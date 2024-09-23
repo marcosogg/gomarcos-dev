@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from "next/image";
+// import Image from "next/image";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, Moon, Sun, ChevronRight, ChevronDown, ChevronUp, ExternalLink, Send } from 'lucide-react';
 
@@ -43,7 +43,7 @@ const SkillBar = ({ skill, level }: { skill: string; level: number }) => (
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
-  const [expandedProject, setExpandedProject] = useState(null);
+  const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   useEffect(() => {
     if (darkMode) {
