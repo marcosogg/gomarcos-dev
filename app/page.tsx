@@ -120,9 +120,6 @@ export default function Home() {
           <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" className="text-xl font-bold">Marcos Gomes</a>
             <div className="flex items-center space-x-4">
-              <a href="#skills" className="hidden md:inline-block hover:text-blue-600 transition-colors">Skills</a>
-              <a href="#projects" className="hidden md:inline-block hover:text-blue-600 transition-colors">Projects</a>
-              <a href="#contact" className="hidden md:inline-block hover:text-blue-600 transition-colors">Contact</a>
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
@@ -152,16 +149,16 @@ export default function Home() {
                 Passionate about creating efficient, scalable, and user-friendly applications. 
                 Ready to bring fresh ideas and strong problem-solving skills to your team.
               </p>
-              <a
+              {/* <a
                 href="#contact"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 inline-flex items-center"
               >
                 Get in touch <ChevronRight className="ml-2" />
-              </a>
+              </a> */}
             </motion.div>
           </section>
 
-          <section id="skills" className="py-20">
+          {/* <section id="skills" className="py-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
             <motion.div
               className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
@@ -173,9 +170,9 @@ export default function Home() {
                 <SkillBar key={skill.name} skill={skill.name} level={skill.level} />
               ))}
             </motion.div>
-          </section>
+          </section> */}
 
-          <section id="projects" className="py-20">
+          {/* <section id="projects" className="py-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
             <div className="flex justify-center space-x-4 mb-8">
               {['All', 'Full Stack', 'Frontend', 'Mobile', 'Data'].map((filter) => (
@@ -256,12 +253,12 @@ export default function Home() {
                 ))}
               </motion.div>
             </AnimatePresence>
-          </section>
+          </section> */}
 
           <section id="contact" className="py-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+            {/* <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2> */}
             <div className="max-w-2xl mx-auto">
-              <form className="space-y-4">
+              {/* <form className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
                   <input
@@ -298,7 +295,7 @@ export default function Home() {
                 >
                   Send Message <Send className="ml-2 w-4 h-4" />
                 </button>
-              </form>
+              </form> */}
             </div>
             <motion.div
               className="flex flex-col md:flex-row justify-center items-center gap-6 mt-12"
@@ -306,27 +303,27 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <a href="mailto:your.email@example.com" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
-                <Mail /> your.email@example.com
+              <a href="mailto:marcosogomes@gmail.com" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
+                <Mail /> marcosogomes@gmail.com
               </a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
+              {/* <a href="https://github.com/marcosogg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
                 <Github /> GitHub
-              </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
+              </a> */}
+              <a href="https://www.linkedin.com/in/marcosogomes/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
                 <Linkedin /> LinkedIn
               </a>
             </motion.div>
           </section>
         </main>
 
-        <footer className="bg-gray-100 dark:bg-gray-800 py-8">
+        {/* <footer className="bg-gray-100 dark:bg-gray-800 py-8">
           <div className="container mx-auto px-6 text-center">
             <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
               Built with React, Tailwind CSS, and Framer Motion
             </p>
           </div>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
