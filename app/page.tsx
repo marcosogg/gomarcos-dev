@@ -3,9 +3,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// import Image from "next/image";
+import Image from "next/image";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, Moon, Sun, ChevronRight, ChevronDown, ChevronUp, ExternalLink, Send } from 'lucide-react';
+import showcaseImage from "/public/showcase-image.png"; // Import the image
 
 const TypeWriter = ({ text, delay = 100 }: { text: string; delay?: number }) => {
   const [currentText, setCurrentText] = useState('');
@@ -54,6 +55,16 @@ export default function Home() {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  useEffect(() => {
+    // Redirect after 3 seconds (3000 milliseconds)
+    const redirectTimer = setTimeout(() => {
+      window.location.href = 'https://vmp-plus-showcase-front.lovable.app/';
+    }, 3000);
+
+    // Cleanup the timer if the component unmounts
+    return () => clearTimeout(redirectTimer);
+  }, []); // Empty dependency array means this runs once when component mounts
 
   const skills = [
     { name: 'JavaScript', level: 90 },
@@ -114,217 +125,17 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-        <header className="fixed w-full bg-white dark:bg-gray-900 shadow-md z-10">
-          <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" className="text-xl font-bold">Marcos Gomes</a>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
-            </div>
-          </nav>
-        </header>
-
-        <main className="container mx-auto px-6 pt-24 pb-12">
-          <section id="hero" className="py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Hi, I&apos;m <span className="text-blue-600">Marcos Gomes</span>
-              </h1>
-              <h2 className="text-2xl md:text-3xl mb-8">
-                I&apos;m a <TypeWriter text="Software Developer" delay={100} />
-              </h2>
-              <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Passionate about creating efficient, scalable, and user-friendly applications. 
-                Ready to bring fresh ideas and strong problem-solving skills to your team.
-              </p>
-              {/* <a
-                href="#contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 inline-flex items-center"
-              >
-                Get in touch <ChevronRight className="ml-2" />
-              </a> */}
-            </motion.div>
-          </section>
-
-          {/* <section id="skills" className="py-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-            <motion.div
-              className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              {skills.map((skill) => (
-                <SkillBar key={skill.name} skill={skill.name} level={skill.level} />
-              ))}
-            </motion.div>
-          </section> */}
-
-          {/* <section id="projects" className="py-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-            <div className="flex justify-center space-x-4 mb-8">
-              {['All', 'Full Stack', 'Frontend', 'Mobile', 'Data'].map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  className={`px-4 py-2 rounded-full ${
-                    activeFilter === filter
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white'
-                  } transition-colors duration-300`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
-            <AnimatePresence>
-              <motion.div 
-                className="grid md:grid-cols-2 gap-8"
-                layout
-              >
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    key={project.title}
-                    layout
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                      <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mb-4">
-                        {project.category}
-                      </span>
-                      <button
-                        onClick={() => toggleProject(project.title)}
-                        className="text-blue-600 hover:underline inline-flex items-center"
-                      >
-                        {expandedProject === project.title ? 'Show less' : 'Show more'}
-                        {expandedProject === project.title ? <ChevronUp className="ml-1 w-4 h-4" /> : <ChevronDown className="ml-1 w-4 h-4" />}
-                      </button>
-                      <AnimatePresence>
-                        {expandedProject === project.title && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="mt-4"
-                          >
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">{project.longDescription}</p>
-                            <div className="mb-4">
-                              <h4 className="font-semibold mb-2">Technologies used:</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {project.technologies.map((tech) => (
-                                  <span key={tech} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-sm">
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                            <a
-                              href={project.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center text-blue-600 hover:underline"
-                            >
-                              View Project <ExternalLink className="ml-1 w-4 h-4" />
-                            </a>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </section> */}
-
-          <section id="contact" className="py-20">
-            {/* <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2> */}
-            <div className="max-w-2xl mx-auto">
-              {/* <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 inline-flex items-center"
-                >
-                  Send Message <Send className="ml-2 w-4 h-4" />
-                </button>
-              </form> */}
-            </div>
-            <motion.div
-              className="flex flex-col md:flex-row justify-center items-center gap-6 mt-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <a href="mailto:marcosogomes@gmail.com" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
-                <Mail /> marcosogomes@gmail.com
-              </a>
-              {/* <a href="https://github.com/marcosogg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
-                <Github /> GitHub
-              </a> */}
-              <a href="https://www.linkedin.com/in/marcosogomes/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg hover:text-blue-600 transition-colors">
-                <Linkedin /> LinkedIn
-              </a>
-            </motion.div>
-          </section>
-        </main>
-
-        {/* <footer className="bg-gray-100 dark:bg-gray-800 py-8">
-          <div className="container mx-auto px-6 text-center">
-            <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Built with React, Tailwind CSS, and Framer Motion
-            </p>
-          </div>
-        </footer> */}
-      </div>
+    <div className="flex justify-center items-center min-h-screen bg-white">
+      <a href="https://vmp-plus-showcase-front.lovable.app/" target="_blank" rel="noopener noreferrer">
+        <Image 
+          src="/vmpplus_poster.png"
+          alt="VMP+ Showcase" 
+          width={800}
+          height={1131}
+          priority
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      </a>
     </div>
   );
 }
