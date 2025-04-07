@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Risk Assessment</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 1in;
+        }
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #2d3748;
+            line-height: 1.2;
+        }
+        .document-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c5282;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 12px;
+            color: #718096;
+        }
+        .table-wrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+            table-layout: fixed;
+        }
+        th {
+            background-color: #2c5282;
+            color: white;
+            padding: 6px 8px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 9pt;
+            white-space: nowrap;
+        }
+        td {
+            padding: 6px 8px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        .col-category { width: 12%; }
+        .col-description { width: 22%; }
+        .col-impact { width: 10%; }
+        .col-probability { width: 12%; }
+        .col-strategy { width: 32%; }
+        .col-progress { width: 12%; }
+        
+        .risk-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .risk-high { background-color: #fc8181; }
+        .risk-medium { background-color: #f6e05e; }
+        .risk-low { background-color: #68d391; }
+        
+        .progress-status {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background-color: #e2e8f0;
+            font-size: 8pt;
+        }
+
+        .strategy-list {
+            margin: 0;
+            padding-left: 15px;
+            list-style-type: disc;
+        }
+        
+        .footer {
+            margin-top: 15px;
+            font-size: 8pt;
+            color: #718096;
+            text-align: right;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            table { page-break-inside: auto; }
+            tr { page-break-inside: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-header">
+        <div class="title">Project Risk Assessment Matrix</div>
+        <div class="subtitle">Technical and Security Risk Analysis</div>
+    </div>
+    
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-category">Category</th>
+                    <th class="col-description">Risk Description</th>
+                    <th class="col-impact">Impact</th>
+                    <th class="col-probability">Probability</th>
+                    <th class="col-strategy">Mitigation Strategy</th>
+                    <th class="col-progress">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical</td>
+                    <td>Supabase service interruption</td>
+                    <td><span class="risk-indicator risk-high"></span>High</td>
+                    <td><span class="risk-indicator risk-low"></span>Low</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>Implement offline mode</li>
+                            <li>Regular backups</li>
+                            <li>Fallback system</li>
+                            <li>Secondary instance</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+                <tr>
+                    <td>Technical</td>
+                    <td>Real-time scaling challenges</td>
+                    <td><span class="risk-indicator risk-high"></span>High</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>Connection pooling</li>
+                            <li>Query optimization</li>
+                            <li>Load testing</li>
+                            <li>Horizontal scaling</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+                <tr>
+                    <td>Technical</td>
+                    <td>Frontend performance bottlenecks</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>Code splitting</li>
+                            <li>Lazy loading</li>
+                            <li>Performance monitoring</li>
+                            <li>Asset optimization</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+                <tr>
+                    <td>Technical</td>
+                    <td>Integration complexities</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>API documentation</li>
+                            <li>Standard data formats</li>
+                            <li>Error handling</li>
+                            <li>Mock services</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>Data breach risks</td>
+                    <td><span class="risk-indicator risk-high"></span>High</td>
+                    <td><span class="risk-indicator risk-low"></span>Low</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>RLS implementation</li>
+                            <li>MFA & encryption</li>
+                            <li>Security audits</li>
+                            <li>Regular updates</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+                <tr>
+                    <td>Technical</td>
+                    <td>RLS implementation</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td><span class="risk-indicator risk-medium"></span>Medium</td>
+                    <td>
+                        <ul class="strategy-list">
+                            <li>Simple initial policy</li>
+                            <li>Access testing</li>
+                            <li>Policy documentation</li>
+                            <li>Modular approach</li>
+                        </ul>
+                    </td>
+                    <td><span class="progress-status">Planning</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="footer">
+        Last Updated: <script>
+            const date = new Date();
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            document.write(`${day}/${month}/${year}`);
+        </script>
+    </div>
+</body>
+</html>
+ 

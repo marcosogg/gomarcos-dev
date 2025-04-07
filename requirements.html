@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Requirements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .requirement-card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .requirement-card:hover {
+            transform: translateY(-2px);
+        }
+        .section-title {
+            position: relative;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+        .section-title span {
+            position: relative;
+            background: #f9fafb;
+            padding: 0 1.5rem;
+            z-index: 1;
+        }
+        /* Custom color classes for functional requirements */
+        .bg-func-must {
+            background-color: #1e40af; /* dark blue */
+        }
+        .bg-func-should {
+            background-color: #2563eb; /* medium blue */
+        }
+        .bg-func-could {
+            background-color: #3b82f6; /* light blue */
+        }
+        .bg-func-must-light {
+            background-color: #dbeafe; /* very light blue */
+        }
+        .text-func-must {
+            color: #1e40af;
+        }
+        /* Custom color classes for non-functional requirements */
+        .bg-nonfunc-must {
+            background-color: #334155; /* dark slate */
+        }
+        .bg-nonfunc-should {
+            background-color: #475569; /* medium slate */
+        }
+        .bg-nonfunc-could {
+            background-color: #64748b; /* light slate */
+        }
+        .bg-nonfunc-must-light {
+            background-color: #f1f5f9; /* very light slate */
+        }
+        .text-nonfunc-must {
+            color: #334155;
+        }
+        @media print {
+            @page {
+                margin: 1.5cm;
+            }
+            .requirement-card {
+                break-inside: avoid;
+            }
+            .shadow-lg {
+                box-shadow: none !important;
+            }
+            .bg-gradient-to-r {
+                background: #1a365d !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Project Requirements</h1>
+            <p class="text-xl text-gray-600 font-medium">Technical Specifications and System Requirements</p>
+        </div>
+
+        <!-- Functional Requirements -->
+        <div class="mb-16">
+            <div class="section-title">
+                <span class="text-2xl font-bold text-blue-900 bg-gray-50">Functional Requirements</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Must Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-func-must px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Must Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Vendor Profile Management (CRUD)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">User Authentication and Authorization (RBAC)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Document Management (Upload, Download, Version Control)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Basic Search Functionality</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Contract Management (CRUD, Renewal Notifications)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Basic Reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-func-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Basic API for CRUD operations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Should Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-func-should px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Should Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Advanced Search and Filtering</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Performance Monitoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Automated Onboarding</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Data Import/Export</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Audit Logging</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Real-time Updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Customizable Dashboards</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Could Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-func-could px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Could Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Payment Gateway Integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Email Service Integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Predictive Analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Advanced Reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">AI-powered features</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Non-Functional Requirements -->
+        <div>
+            <div class="section-title">
+                <span class="text-2xl font-bold text-slate-700 bg-gray-50">Non-Functional Requirements</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Must Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-nonfunc-must px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Must Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-nonfunc-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Security: Data encryption, RBAC, secure authentication, RLS</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-nonfunc-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Performance: Reasonable response times (e.g., &lt; 2 seconds)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-nonfunc-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Scalability: Handle 100 vendors, 20 users (initially)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-nonfunc-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Usability: Intuitive UI, clear navigation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-nonfunc-must text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Availability: 99% uptime</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Should Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-nonfunc-should px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Should Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-slate-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Maintainability: Well-documented code, modular design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-slate-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Testability: Unit and integration tests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-slate-700 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Extensibility: Ability to add new features</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Could Have -->
+                <div class="requirement-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                    <div class="bg-nonfunc-could px-8 py-5">
+                        <h3 class="text-lg font-semibold text-white tracking-wide">Could Have</h3>
+                    </div>
+                    <div class="px-8 py-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-slate-600 text-xl mr-3 leading-5">•</span>
+                                <span class="text-gray-700">Portability</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-16 text-right text-sm text-gray-500">
+            Last Updated: <script>
+                const date = new Date();
+                document.write(date.toLocaleDateString('en-US', { 
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                }));
+            </script>
+        </div>
+    </div>
+</body>
+</html> 

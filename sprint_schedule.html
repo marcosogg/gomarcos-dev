@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Sprint Schedule</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            .break-inside-avoid {
+                break-inside: avoid;
+            }
+            @page {
+                size: landscape;
+                margin: 1.5cm;
+            }
+            .shadow-lg {
+                box-shadow: none !important;
+            }
+            .bg-gradient-to-r {
+                background: #1a365d !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+        }
+    </style>
+</head>
+<body class="p-8 bg-gray-50 min-h-screen">
+    <div class="max-w-8xl mx-auto">
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Project Sprint Schedule</h1>
+            <p class="text-gray-600">Technical Implementation Timeline and Milestones</p>
+        </div>
+        
+        <div class="overflow-hidden bg-white rounded-xl shadow-lg border border-gray-200">
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="gradient-header">
+                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Sprint</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Tasks</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Deliverables & Success Criteria</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold text-white">Milestone</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <!-- Sprint 1 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 1</div>
+                                <div class="text-sm text-gray-500">Feb 17 - Mar 1, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Development Environment Setup:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Configure Vite + React + TypeScript</li>
+                                            <li>Set up Supabase project</li>
+                                            <li>Implement CI/CD pipeline</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">User Authentication Implementation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Basic login/registration</li>
+                                            <li>Role-based access control</li>
+                                            <li>Security policies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Working authentication system</li>
+                                            <li>Deployed development environment</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>100% test coverage for auth flows</li>
+                                            <li>&lt; 200ms response time</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                    Development phase
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Sprint 2 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 2</div>
+                                <div class="text-sm text-gray-500">Mar 2 - Mar 15, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Vendor Profile CRUD:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Create vendor profiles</li>
+                                            <li>Update/delete functionality</li>
+                                            <li>Search and filter capabilities</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Basic UI Implementation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Dashboard layout</li>
+                                            <li>Navigation structure</li>
+                                            <li>Form components</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Working vendor management system</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>All CRUD operations functional</li>
+                                            <li>UI responsive across devices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                    Development phase
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Sprint 3 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 3</div>
+                                <div class="text-sm text-gray-500">Mar 16 - Mar 29, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Document Management:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>File upload/download</li>
+                                            <li>Version control</li>
+                                            <li>Storage management</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Search Implementation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Full-text search</li>
+                                            <li>Advanced filtering</li>
+                                            <li>Real-time updates</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Complete document management system</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>File operations &lt; 5s for 10MB files</li>
+                                            <li>Search results &lt; 1s</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                    Development phase
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Sprint 4 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 4</div>
+                                <div class="text-sm text-gray-500">Mar 30 - Apr 6, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Contract Management:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Contract CRUD operations</li>
+                                            <li>Automated notifications</li>
+                                            <li>Renewal tracking</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Showcase Entry Preparation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Project landing page</li>
+                                            <li>Project image/poster</li>
+                                            <li>Abstract and documentation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Contract management system</li>
+                                            <li>Showcase Entry (Due: April 6, 2025)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Automated notification system functional</li>
+                                            <li>All CRUD operations working</li>
+                                            <li>Showcase entry submitted</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    Showcase Entry submission
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Sprint 5 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 5</div>
+                                <div class="text-sm text-gray-500">Apr 7 - Apr 13, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Reporting System:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Basic report generation</li>
+                                            <li>Export functionality</li>
+                                            <li>Dashboard metrics</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Final Code Review and Documentation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Code cleanup</li>
+                                            <li>Documentation finalization</li>
+                                            <li>Repository organization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Basic reporting system</li>
+                                            <li>Final code submission</li>
+                                            <li>Final report</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Report generation &lt; 3s</li>
+                                            <li>All core metrics displayed</li>
+                                            <li>Documentation complete</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                    Final Project Submission
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Sprint 6 -->
+                        <tr class="break-inside-avoid hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="font-semibold text-gray-900">Sprint 6</div>
+                                <div class="text-sm text-gray-500">Apr 14 - Apr 28, 2025</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Video Demo Creation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Feature demonstration</li>
+                                            <li>Workflow examples</li>
+                                            <li>System overview</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Presentation Preparation:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Slides creation</li>
+                                            <li>Demo script</li>
+                                            <li>Final testing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Deliverables:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>Project demonstration video (Due: April 22, 2025)</li>
+                                            <li>Final presentation</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-900 mb-2">Success Criteria:</p>
+                                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-1">
+                                            <li>All test cases passing</li>
+                                            <li>Performance metrics met</li>
+                                            <li>Presentation ready</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="space-y-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                                        Video Demo - Apr 22
+                                    </span>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                                        Final Presentation - Apr 28-May 9
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt-6 text-right text-sm text-gray-500">
+            Last Updated: <script>
+                const date = new Date();
+                document.write(date.toLocaleDateString('en-US', { 
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                }));
+            </script>
+        </div>
+    </div>
+</body>
+</html> 
