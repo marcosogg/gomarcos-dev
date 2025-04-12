@@ -1,62 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Github, ExternalLink, Youtube, FileText, Database, Zap, CalendarDays, Activity, Linkedin, Clock } from "lucide-react";
+import { Github, ExternalLink, Youtube, FileText, Database, Zap, CalendarDays, Activity, Linkedin, Clock, Menu, X } from "lucide-react";
 
 const LandingPage = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   return <div className="min-h-screen flex flex-col">
       {/* Navigation Bar */}
       <nav className="sticky top-0 z-50 bg-slate-900 text-white py-3">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center space-x-6">
-              <a href="#about-link" className="text-sm hover:text-blue-300 transition-colors">About</a>
-              <a href="#features-link" className="text-sm hover:text-blue-300 transition-colors">Features</a>
-              <a href="#live-demo-section" className="text-sm hover:text-blue-300 transition-colors">Demo</a>
-              <a href="#tech-stack-link" className="text-sm hover:text-blue-300 transition-colors">Tech</a>
+            <div className="flex justify-between items-center">
+              {/* Logo/Brand */}
+              <div>
+                <a href="#" className="text-white font-semibold">VMP+</a>
+              </div>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6">
+                <a href="#about-link" className="text-sm hover:text-blue-300 transition-colors">About</a>
+                <a href="#features-link" className="text-sm hover:text-blue-300 transition-colors">Features</a>
+                <a href="#live-demo-section" className="text-sm hover:text-blue-300 transition-colors">Demo</a>
+                <a href="#tech-stack-link" className="text-sm hover:text-blue-300 transition-colors">Tech</a>
+              </div>
+              
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <button 
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="text-white p-2"
+                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                >
+                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
+            
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+              <div className="md:hidden pt-4 pb-2">
+                <div className="flex flex-col space-y-3">
+                  <a 
+                    href="#about-link" 
+                    className="text-sm hover:text-blue-300 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About
+                  </a>
+                  <a 
+                    href="#features-link" 
+                    className="text-sm hover:text-blue-300 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Features
+                  </a>
+                  <a 
+                    href="#live-demo-section" 
+                    className="text-sm hover:text-blue-300 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Demo
+                  </a>
+                  <a 
+                    href="#tech-stack-link" 
+                    className="text-sm hover:text-blue-300 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Tech
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </nav>
 
       {/* Header Section - Updated for Phase 1 */}
       <header className="relative bg-white border-b">
-        <div className="container mx-auto px-4 pb-32">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 pb-16 md:pb-32">
+          <div className="max-w-6xl mx-auto pt-64 md:pt-0">
+            {/* Mobile-only Poster Image (positioned to hang from navbar) */}
+            <div className="md:hidden absolute -top-8 left-0 right-0 mx-auto z-10 px-6">
+              <img 
+                src="/poster-logo.png" 
+                alt="VMP PLUS Project Poster - Before and After" 
+                className="w-full max-w-xs mx-auto shadow-sm"
+                loading="lazy"
+              />
+            </div>
+            
             {/* Apply flex layout for medium screens and up */}
-            <div className="text-center md:flex md:items-start md:text-left pt-16">
+            <div className="text-center md:flex md:items-start md:text-left pt-8 md:pt-16 mt-8 md:mt-0">
               {/* Left Column: Text Content */}
               <div className="md:w-3/5">
                 <img
                   src="/vmp-logo-master.png"
                   alt="VMP+ Logo"
-                  className="h-12 w-auto mb-6 mx-auto md:mx-0"
+                  className="h-10 md:h-12 w-auto mb-4 md:mb-6 mx-auto md:mx-0"
                 />
-                <p className="text-xl md:text-2xl text-slate-600 mt-2 mb-8">Your Vendors. One Platform.</p>
-                <p className="text-lg md:text-xl text-slate-700 mb-8 leading-relaxed">
+                <p className="text-lg md:text-2xl text-slate-600 mt-2 mb-4 md:mb-8">Your Vendors. One Platform.</p>
+                <p className="text-base md:text-xl text-slate-700 mb-6 md:mb-8 leading-relaxed px-2 md:px-0">
                   VMP+ is a full-stack web application designed to streamline and optimize vendor management processes. It replaces manual workflows with a centralized platform, enabling efficient management of vendors, contracts, and performance metrics. Built for the Higher Diploma in Computer Science.
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                  {/* Live Demo Button - Adjusted for contrast */}
+                  {/* Live Demo Button - Adjusted for contrast and touch */}
                   <Button
                     size="lg"
                     variant="default"
-                    className="bg-blue-600 hover:bg-blue-700"
+                    className="bg-blue-600 hover:bg-blue-700 py-6 px-6 md:py-4 md:px-4 text-base"
                     asChild
                   >
                     <a href="#live-demo-section">Live Demo</a>
                   </Button>
                 </div>
               </div>
-              {/* Right Column: Image */}
-              <div className="md:w-2/5 md:pl-8 mt-12 md:mt-0 relative">
+              {/* Right Column: Image (Desktop only) */}
+              <div className="hidden md:block md:w-2/5 md:pl-8 md:mt-0 relative">
                 {/* Adjust image classes */}
-                <div className="relative -mt-[72px]">
+                <div className="relative md:-mt-[72px]">
                   <img 
                     src="/poster-logo.png" 
                     alt="VMP PLUS Project Poster - Before and After" 
-                    className="w-full max-w-md relative z-0"
+                    className="w-full md:max-w-md mx-auto relative z-0"
                     loading="lazy"
                   />
                 </div>
@@ -70,24 +137,24 @@ const LandingPage = () => {
       {/* Main Content Section */}
       <main className="flex-grow">
         {/* About the Developer */}
-        <section id="about-link" className="bg-gray-50/50 py-16 md:py-20">
+        <section id="about-link" className="bg-gray-50/50 py-10 md:py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col md:flex-row md:items-start md:gap-16">
                 {/* Left Column - Image */}
-                <div className="md:w-2/5 mb-8 md:mb-0">
+                <div className="md:w-2/5 mb-6 md:mb-0">
                   <img 
                     src="/marcos-profile-casual.jpg" 
                     alt="Marcos O. Gomes" 
-                    className="rounded-2xl shadow-lg w-full max-w-xs mx-auto object-cover"
+                    className="rounded-2xl shadow-lg w-full max-w-[200px] md:max-w-xs mx-auto object-cover"
                     loading="lazy"
                   />
                 </div>
                 {/* Right Column - Content */}
-                <div className="md:w-3/5 bg-slate-50 p-6 rounded-lg">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6">Hi, I'm Marcos.</h2>
+                <div className="md:w-3/5 bg-slate-50 p-4 md:p-6 rounded-lg">
+                  <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Hi, I'm Marcos.</h2>
                   
-                  <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
                     As a <strong>procurement specialist</strong>, I bring a unique perspective to VMP+, combining my emerging <strong>tech skills</strong> with a decade of <strong>hands-on procurement experience</strong>. This project originated from identifying and solving real-world vendor management challenges during 1.5 years in corporate procurement, leading to a concept presented up to the VP level and chosen for a company AI hackathon. My hands-on experience, combined with focused effort during my Higher Diploma, ensures VMP+ addresses practical business needs effectively.
                   </p>
                 </div>
@@ -97,22 +164,22 @@ const LandingPage = () => {
         </section>
 
         {/* Key Features */}
-        <section id="features-link" className="bg-white py-16 md:py-20">
+        <section id="features-link" className="bg-white py-10 md:py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Key Features</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Key Features</h2>
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <FeatureCard icon={<Database className="h-10 w-10 text-blue-600" />} title="Centralized Vendor Data" description="Save Time: Easily manage and access all vendor information in one place." />
-                <FeatureCard icon={<Zap className="h-10 w-10 text-blue-600" />} title="Automated Workflows" description="Boost Efficiency: Streamline processes like vendor onboarding and contract renewals." />
-                <FeatureCard icon={<FileText className="h-10 w-10 text-blue-600" />} title="Contract Management" description="Reduce Risk: Track contract lifecycles, key dates, and compliance requirements." />
-                <FeatureCard icon={<Activity className="h-10 w-10 text-blue-600" />} title="Performance Monitoring" description="Optimize Value: Monitor vendor performance against key metrics and SLAs." />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <FeatureCard icon={<Database className="h-8 w-8 md:h-10 md:w-10 text-blue-600" />} title="Centralized Vendor Data" description="Save Time: Easily manage and access all vendor information in one place." />
+                <FeatureCard icon={<Zap className="h-8 w-8 md:h-10 md:w-10 text-blue-600" />} title="Automated Workflows" description="Boost Efficiency: Streamline processes like vendor onboarding and contract renewals." />
+                <FeatureCard icon={<FileText className="h-8 w-8 md:h-10 md:w-10 text-blue-600" />} title="Contract Management" description="Reduce Risk: Track contract lifecycles, key dates, and compliance requirements." />
+                <FeatureCard icon={<Activity className="h-8 w-8 md:h-10 md:w-10 text-blue-600" />} title="Performance Monitoring" description="Optimize Value: Monitor vendor performance against key metrics and SLAs." />
               </div>
             </div>
           </div>
         </section>
 
         {/* Live Demo Section */}
-        <section id="live-demo-section" className="bg-slate-50 py-16 md:py-20">
+        <section id="live-demo-section" className="bg-slate-50 py-10 md:py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="max-w-3xl mx-auto text-center">
@@ -120,29 +187,30 @@ const LandingPage = () => {
                 <img 
                   src="/live_demo_soon.png"
                   alt="Minimalist office desk with laptop overlooking the beach, announcing the VMP+ Live Demo"
-                  className="block max-w-2xl mx-auto my-6 rounded-md shadow"
+                  className="block max-w-full md:max-w-2xl mx-auto my-4 md:my-6 rounded-md shadow"
                 />
-                <p className="text-xl text-slate-600">Coming Soon! Check back in a couple of weeks.</p>
+                <p className="text-lg md:text-xl text-slate-600">Coming Soon! Check back in a couple of weeks.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Project Demonstration Video */}
-        <section id="hackathon-demo" className="bg-white py-12 md:py-16">
+        <section id="hackathon-demo" className="bg-white py-8 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Corporate AI Hackathon 2024 - Project Concept Demo</h2>
-              <p className="text-gray-600 mb-4 text-center max-w-3xl mx-auto">
+              <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-8 text-center">Corporate AI Hackathon 2024 - Project Concept Demo</h2>
+              <p className="text-gray-600 mb-4 text-center max-w-3xl mx-auto text-sm md:text-base">
                 Watch this concept demo presented at the Corporate AI Hackathon 2024 to see VMP+ core ideas in action.
               </p>
               <div className="max-w-2xl mx-auto">
-                <Card className="p-2">
+                <Card className="p-1 md:p-2">
                   <video 
                     src="/ProcurementVMP.mp4#t=1" 
                     controls 
                     className="w-full aspect-video rounded-lg"
                     poster="/hackathon-video-thumbnail.jpg"
+                    preload="none"
                   ></video>
                 </Card>
               </div>
@@ -151,11 +219,11 @@ const LandingPage = () => {
         </section>
 
         {/* Technologies Used */}
-        <section id="tech-stack-link" className="bg-slate-50 py-16 md:py-20">
+        <section id="tech-stack-link" className="bg-slate-50 py-10 md:py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Technologies Used</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Technologies Used</h2>
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto">
                 {technologies.map((tech, index) => {
                   const iconSrc = tech === "shadcn/ui"
                     ? "/shadcnui.svg"
@@ -167,13 +235,13 @@ const LandingPage = () => {
                       href={technologyUrls[tech] || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white rounded-lg p-4 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors border border-border hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      className="bg-white rounded-lg p-3 md:p-4 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors border border-border hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation"
                     >
                       <img 
                         src={iconSrc} 
                         alt={`${tech} Logo`} 
                         title={getTechDescription(tech)}
-                        className="h-12 w-12 mb-2" 
+                        className="h-10 w-10 md:h-12 md:w-12 mb-2" 
                         onError={(e) => { 
                           const target = e.target as HTMLImageElement;
                           target.onerror = null;
@@ -181,7 +249,7 @@ const LandingPage = () => {
                           console.warn(`Icon not found for ${tech}, using path: ${iconSrc}`);
                         }}
                       />
-                      <div className="font-medium text-lg">{tech}</div>
+                      <div className="font-medium text-sm md:text-lg">{tech}</div>
                     </a>
                   )
                 })}
@@ -191,16 +259,16 @@ const LandingPage = () => {
         </section>
         
         {/* Call to Action */}
-        <section id="explore-project" className="bg-slate-900 py-16 md:py-20 text-center">
+        <section id="explore-project" className="bg-slate-900 py-10 md:py-20 text-center">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Explore the Project</h2>
-            <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">Explore the Project</h2>
+            <p className="text-slate-300 text-sm md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto">
               Access the code, live demo, and documentation to see how VMP PLUS can transform your vendor management processes.
             </p>
-            <Button variant="secondary" size="lg" className="font-semibold" asChild>
+            <Button variant="secondary" size="lg" className="font-semibold py-6 px-6 md:py-4 md:px-4" asChild>
               <a href="https://github.com/marcosogg/vmpplus-hdip-final-project" className="flex items-center gap-2">
                 <Github size={20} />
-                View GitHub Repository
+                <span className="text-base">View GitHub Repository</span>
               </a>
             </Button>
           </div>
@@ -210,16 +278,16 @@ const LandingPage = () => {
       {/* Footer Section */}
       <footer>
         {/* Bottom Band (Light Gray) */}
-        <div className="bg-slate-100 text-slate-500 py-6">
+        <div className="bg-slate-100 text-slate-500 py-4 md:py-6">
           <div className="container mx-auto px-4">
-            <p className="text-center">
+            <p className="text-center text-sm md:text-base">
               &copy; {new Date().getFullYear()} VMP+ Project. All rights reserved.{" "}
               |{" "}
               <a 
                 href="https://www.linkedin.com/in/marcosogomes/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-slate-700 transition-colors"
+                className="hover:text-slate-700 transition-colors inline-block py-2 px-1"
               >
                 LinkedIn
               </a>
@@ -235,21 +303,22 @@ const FeatureCard = ({
   icon,
   title,
   description
-}) => <Card className="h-full border border-border hover:shadow-lg hover:scale-[1.03] transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
-    <CardHeader>
+}) => <Card className="h-full border border-border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation">
+    <CardHeader className="p-4 md:p-6">
       <div className="mb-2">{icon}</div>
-      <CardTitle>{title}</CardTitle>
+      <CardTitle className="text-lg md:text-xl">{title}</CardTitle>
     </CardHeader>
-    <CardContent>
-      <p className="text-muted-foreground">{description}</p>
+    <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
+      <p className="text-muted-foreground text-sm md:text-base">{description}</p>
     </CardContent>
   </Card>;
+
 const FooterLink = ({
   icon,
   text,
   href
 }) => <li>
-    <a href={href} className="flex items-center gap-2 text-slate-200 hover:text-white transition-colors">
+    <a href={href} className="flex items-center gap-2 text-slate-200 hover:text-white transition-colors py-2 px-1">
       {icon}
       <span>{text}</span>
     </a>
