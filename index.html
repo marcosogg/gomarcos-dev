@@ -20,6 +20,30 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .live-project-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #3b82f6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .live-project-button:hover {
+        background-color: #2563eb;
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
 
   <body>
@@ -27,5 +51,7 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <a href="https://www.altitudgain.com" target="_blank" class="live-project-button"><i class="fas fa-external-link-alt"></i> Visit Live Project</a>
   </body>
 </html>
