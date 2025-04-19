@@ -184,12 +184,16 @@ const LandingPage = () => {
             <div className="max-w-6xl mx-auto">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Live Demo</h2>
-                <img 
-                  src="/live_demo_soon.png"
-                  alt="Minimalist office desk with laptop overlooking the beach, announcing the VMP+ Live Demo"
-                  className="block max-w-full md:max-w-2xl mx-auto my-4 md:my-6 rounded-md shadow"
-                />
-                <p className="text-lg md:text-xl text-slate-600">Coming Soon! Check back in a couple of weeks.</p>
+                <Card className="p-1 md:p-2">
+                  <video 
+                    src="/demo.mp4#t=1" 
+                    controls 
+                    className="w-full aspect-video rounded-lg"
+                    poster="/demo-thumbnail.jpg"
+                    preload="none"
+                  ></video>
+                </Card>
+                <p className="text-lg md:text-xl text-slate-600 mt-4">Watch the VMP+ demo video to see the platform in action.</p>
               </div>
             </div>
           </div>
@@ -209,7 +213,7 @@ const LandingPage = () => {
                     src="/ProcurementVMP.mp4#t=1" 
                     controls 
                     className="w-full aspect-video rounded-lg"
-                    poster="/hackathon-video-thumbnail.jpg"
+                    poster="/hackathon-thumbnail.jpg"
                     preload="none"
                   ></video>
                 </Card>
