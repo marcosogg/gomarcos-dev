@@ -152,7 +152,7 @@ const LandingPage = () => {
                 </div>
                 {/* Right Column - Content */}
                 <div className="md:w-3/5 bg-slate-50 p-4 md:p-6 rounded-lg">
-                  <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Hi, I'm Marcos.</h2>
+                  <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Hi, I'm Marcos Gomes.</h2>
                   
                   <p className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed">
                     As a <strong>procurement specialist</strong>, I bring a unique perspective to VMP+, combining my emerging <strong>tech skills</strong> with a decade of <strong>hands-on procurement experience</strong>. This project originated from identifying and solving real-world vendor management challenges during 1.5 years in corporate procurement, leading to a concept presented up to the VP level and chosen for a company AI hackathon. My hands-on experience, combined with focused effort during my Higher Diploma, ensures VMP+ addresses practical business needs effectively.
